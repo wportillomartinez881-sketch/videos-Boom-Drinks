@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Focus - Retos de Productividad</title>
+    <style>
+        :root {
+            --bg-color: #0d0f18;
+            --card-bg: #161b2e;
+            --primary: #00ffcc;
+            --secondary: #7928ca;
+            --accent: #ff007f;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--primary), var(--text-main));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .challenge-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        #challenge-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-family: monospace;
+            color: var(--text-main);
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: 0 4px 15px rgba(121, 40, 202, 0.4);
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-muted);
+            box-shadow: none;
+        }
+
+        button.secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nexus Focus</h1>
+        <p class="subtitle">Rompe la procrastinación con micro-retos cronometrados</p>
+
+        <div class="challenge-box">
+            <div id="challenge-text">Haz clic en "Generar Reto" para comenzar tu misión.</div>
+        </div>
+
+        <div class="timer-display" id="timer">25:00</div>
+
+        <div class="btn-group">
+            <button id="action-btn" onclick="generateChallenge()">Generar Reto</button>
+            <button class="secondary" onclick="resetTimer()">Reiniciar</button>
+        </div>
+    </div>
+
+    <script>
+        const challenges = [
+            "Escribe 300 palabras sin editar ni borrar nada.",
+            "Organiza y limpia tu escritorio por completo.",
+            "Haz 20 flexiones o estiramientos profundos de espalda.",
+            "Responde todos los correos pendientes en menos de 10 minutos.",
+            "Haz una sesión de lectura técnica enfocada durante 15 minutos.",
+            "Haz una lluvia de ideas para tu próximo gran proyecto."
+        ];
+
+        let timerInterval;
+        let timeLeft = 1500; // 25 minutos por defecto
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function generateChallenge() {
+            // Seleccionar reto aleatorio
+            const randomIndex = Math.floor(Math.random() * challenges.length);
+            document.getElementById('challenge-text').textContent = challenges[randomIndex];
+            
+            // Iniciar temporizador de 15 minutos para el reto
+            clearInterval(timerInterval);
+            timeLeft = 900; // 15 minutos
+            updateTimerDisplay();
+
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                    document.getElementById('challenge-text').textContent = "¡Tiempo completado! Excelente trabajo.";
+                }
+            }, 1000);
+
+            // Cambiar texto del botón principal
+            document.getElementById('action-btn').textContent = "Nuevo Reto";
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 1500;
+            updateTimerDisplay();
+            document.getElementById('challenge-text').textContent = "Haz clic en \"Generar Reto\" para comenzar tu misión.";
+            document.getElementById('action-btn').textContent = "Generar Reto";
+        }
+    </script>
+</body>
+</html>
