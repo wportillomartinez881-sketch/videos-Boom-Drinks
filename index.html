@@ -1,213 +1,453 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Focus - Retos de Productividad</title>
-    <style>
-        :root {
-            --bg-color: #0d0f18;
-            --card-bg: #161b2e;
-            --primary: #00ffcc;
-            --secondary: #7928ca;
-            --accent: #ff007f;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, var(--primary), var(--text-main));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p.subtitle {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-
-        .challenge-box {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-
-        #challenge-text {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timer-display {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            font-family: monospace;
-            color: var(--text-main);
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        button {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 15px rgba(121, 40, 202, 0.4);
-        }
-
-        button:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button.secondary {
-            background: transparent;
-            border: 1px solid var(--text-muted);
-            color: var(--text-muted);
-            box-shadow: none;
-        }
-
-        button.secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boom Drinks - Gira Publicitaria</title>
+  <!-- Tailwind CSS para el diseño -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuentes oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+  <!-- Iconos -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #08090E; }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #08090E; }
+    ::-webkit-scrollbar-thumb { background: #1B1E30; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00A3FF; }
+  </style>
 </head>
-<body>
+<body class="bg-[#08090E] text-slate-100 min-h-screen flex flex-col antialiased">
 
-    <div class="container">
-        <h1>Nexus Focus</h1>
-        <p class="subtitle">Rompe la procrastinación con micro-retos cronometrados</p>
+  <!-- Luces decorativas de fondo -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] -translate-y-1/2"></div>
+    <div class="absolute top-1/3 right-10 w-[450px] h-[450px] bg-purple-600/10 rounded-full blur-[140px]"></div>
+  </div>
 
-        <div class="challenge-box">
-            <div id="challenge-text">Haz clic en "Generar Reto" para comenzar tu misión.</div>
+  <!-- Barra de navegación -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#08090E]/85 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 via-blue-600 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20">
+          <div class="w-full h-full bg-[#0B0D15] rounded-[14px] flex items-center justify-center">
+            <!-- Tiburón Mascota SVG -->
+            <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 78 C25 60 38 48 48 30 C53 22 55 12 56 6 C62 18 72 32 88 42 C78 46 68 50 58 52 C72 60 84 72 92 84 C76 80 62 80 50 84 C42 74 34 76 24 82 C20 80 15 79 12 78 Z" fill="url(#shGrad)" />
+              <path d="M42 35 C50 48 58 58 74 62 C62 66 52 64 44 58 C38 68 30 74 20 76 C28 62 36 50 42 35 Z" fill="#38BDF8" opacity="0.9" />
+              <circle cx="62" cy="40" r="4.5" fill="#FFFFFF" />
+              <circle cx="63" cy="40" r="2.8" fill="#00E5FF" />
+              <path d="M46 44 L40 50" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M50 47 L45 53" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="shGrad" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00E5FF" />
+                  <stop offset="0.5" stop-color="#0080FF" />
+                  <stop offset="1" stop-color="#9333EA" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
         </div>
-
-        <div class="timer-display" id="timer">25:00</div>
-
-        <div class="btn-group">
-            <button id="action-btn" onclick="generateChallenge()">Generar Reto</button>
-            <button class="secondary" onclick="resetTimer()">Reiniciar</button>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-2xl tracking-wider text-white">BOOM</span>
+            <span class="font-extrabold text-2xl tracking-wider bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">DRINKS</span>
+          </div>
+          <p class="text-xs font-semibold text-cyan-300 hidden sm:block">¡Un Boom de sabor en cada sorbo!</p>
         </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#video-principal" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Video Apertura</a>
+        <a href="#album-fotos" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Álbum Fotos</a>
+        <a href="#videoteca" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Videoteca</a>
+      </div>
     </div>
+  </header>
 
-    <script>
-        const challenges = [
-            "Escribe 300 palabras sin editar ni borrar nada.",
-            "Organiza y limpia tu escritorio por completo.",
-            "Haz 20 flexiones o estiramientos profundos de espalda.",
-            "Responde todos los correos pendientes en menos de 10 minutos.",
-            "Haz una sesión de lectura técnica enfocada durante 15 minutos.",
-            "Haz una lluvia de ideas para tu próximo gran proyecto."
-        ];
+  <!-- Contenedor Principal -->
+  <main class="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16">
 
-        let timerInterval;
-        let timeLeft = 1500; // 25 minutos por defecto
+    <!-- TÍTULO Y ESLOGAN -->
+    <section class="text-center max-w-4xl mx-auto pt-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-widest mb-6">
+        <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>Gira Publicitaria Oficial 2026</span>
+      </div>
 
-        function updateTimerDisplay() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-4 leading-none">
+        GIRA PUBLICITARIA <span class="block mt-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">BOOM DRINKS</span>
+      </h1>
 
-        function generateChallenge() {
-            // Seleccionar reto aleatorio
-            const randomIndex = Math.floor(Math.random() * challenges.length);
-            document.getElementById('challenge-text').textContent = challenges[randomIndex];
+      <!-- Eslogan solicitado -->
+      <div class="inline-block my-3">
+        <div class="text-xl sm:text-3xl font-extrabold text-white px-6 py-2.5 rounded-2xl bg-gradient-to-r from-cyan-900/40 via-purple-900/40 to-blue-900/40 border border-cyan-500/30 shadow-lg">
+          <span class="bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent">
+            "¡Un Boom de sabor en cada sorbo!"
+          </span>
+        </div>
+      </div>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mt-4 font-normal">
+        Revive los mejores momentos de la gira con <strong class="text-cyan-400 font-semibold">Tiburón Boom</strong>, degustaciones masivas y toda la energía.
+      </p>
+    </section>
+
+    <!-- 1. VIDEO PRINCIPAL (v1si.mp4) DEBAJO DEL TÍTULO -->
+    <section id="video-principal" class="scroll-mt-28">
+      <div class="relative rounded-3xl p-1 bg-gradient-to-b from-cyan-500/40 via-purple-500/20 to-slate-900/80 shadow-2xl">
+        <div class="bg-[#0B0D16] rounded-[22px] overflow-hidden border border-slate-800">
+          <div class="px-6 py-4 bg-[#0E111E] border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-sm font-bold text-white block">Video Oficial de Apertura</span>
+                <span class="text-xs text-slate-400">Archivo: <code class="text-cyan-300 font-mono">v1si.mp4</code></span>
+              </div>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-purple-900/30 text-purple-300 border border-purple-500/30">
+              Video Destacado
+            </span>
+          </div>
+
+          <!-- Reproductor de v1si.mp4 -->
+          <div class="relative w-full aspect-video bg-black flex items-center justify-center">
+            <video src="v1si.mp4" class="w-full h-full object-cover" controls playsinline></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ÁLBUM DE FOTOS (f1.jpeg a f7.jpeg) CON BOTÓN DE OCULTAR Y MOSTRAR -->
+    <section id="album-fotos" class="scroll-mt-28">
+      <div class="rounded-3xl bg-[#0D0F1B] border border-slate-800/90 p-6 sm:p-10 shadow-2xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800/80">
+          <div>
+            <div class="flex items-center gap-2.5 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                <i data-lucide="image" class="w-4 h-4"></i>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Álbum de Fotos de la Gira</h2>
+            </div>
+            <p class="text-sm text-slate-400">Fotografías oficiales desde <code class="text-cyan-300 font-mono">f1.jpeg</code> hasta <code class="text-cyan-300 font-mono">f7.jpeg</code>.</p>
+          </div>
+
+          <!-- BOTÓN SOLICITADO: OCULTA Y MUESTRA EL ÁLBUM AL PRESIONARLO -->
+          <button id="toggleAlbumBtn" onclick="toggleAlbum()" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-purple-600 to-indigo-600 text-white border border-purple-400/30 shadow-lg cursor-pointer hover:opacity-90 transition-all">
+            <i id="toggleIcon" data-lucide="eye-off" class="w-4 h-4"></i>
+            <span id="toggleText">Ocultar Álbum de Fotos</span>
+          </button>
+        </div>
+
+        <!-- Galería de 7 Fotos -->
+        <div id="albumContainer" class="pt-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             
-            // Iniciar temporizador de 15 minutos para el reto
-            clearInterval(timerInterval);
-            timeLeft = 900; // 15 minutos
-            updateTimerDisplay();
+            <!-- Foto 1 (f1.jpeg) -->
+            <div class="sm:col-span-2 lg:col-span-2 rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f1.jpeg', 'Llegada del Boom Truck')">
+                <img src="f1.jpeg" alt="f1.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00A3FF?text=f1.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f1.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Caravana Oficial</span>
+                <h3 class="text-sm font-bold text-white mt-1">Llegada del Boom Truck</h3>
+              </div>
+            </div>
 
-            timerInterval = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    updateTimerDisplay();
-                } else {
-                    clearInterval(timerInterval);
-                    document.getElementById('challenge-text').textContent = "¡Tiempo completado! Excelente trabajo.";
-                }
-            }, 1000);
+            <!-- Foto 2 (f2.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f2.jpeg', 'Tiburón Boom en Tarima')">
+                <img src="f2.jpeg" alt="f2.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/A855F7?text=f2.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f2.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Mascota Oficial</span>
+                <h3 class="text-sm font-bold text-white mt-1">Tiburón Boom en Tarima</h3>
+              </div>
+            </div>
 
-            // Cambiar texto del botón principal
-            document.getElementById('action-btn').textContent = "Nuevo Reto";
-        }
+            <!-- Foto 3 (f3.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f3.jpeg', 'Zona de Degustación')">
+                <img src="f3.jpeg" alt="f3.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00D2FF?text=f3.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f3.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Degustación</span>
+                <h3 class="text-sm font-bold text-white mt-1">Zona de Degustación</h3>
+              </div>
+            </div>
 
-        function resetTimer() {
-            clearInterval(timerInterval);
-            timeLeft = 1500;
-            updateTimerDisplay();
-            document.getElementById('challenge-text').textContent = "Haz clic en \"Generar Reto\" para comenzar tu misión.";
-            document.getElementById('action-btn').textContent = "Generar Reto";
-        }
-    </script>
+            <!-- Foto 4 (f4.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f4.jpeg', 'Retos con el Público')">
+                <img src="f4.jpeg" alt="f4.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/8B5CF6?text=f4.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f4.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Dinámicas</span>
+                <h3 class="text-sm font-bold text-white mt-1">Retos con el Público</h3>
+              </div>
+            </div>
+
+            <!-- Foto 5 (f5.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f5.jpeg', 'Show de Luces y Neón')">
+                <img src="f5.jpeg" alt="f5.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00A3FF?text=f5.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f5.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Show Visual</span>
+                <h3 class="text-sm font-bold text-white mt-1">Show de Luces y Neón</h3>
+              </div>
+            </div>
+
+            <!-- Foto 6 (f6.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f6.jpeg', 'Entrega de Merch Boom')">
+                <img src="f6.jpeg" alt="f6.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/C084FC?text=f6.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f6.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Merchandise</span>
+                <h3 class="text-sm font-bold text-white mt-1">Entrega de Merch Boom</h3>
+              </div>
+            </div>
+
+            <!-- Foto 7 (f7.jpeg) -->
+            <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f7.jpeg', 'Cierre de Gira al Atardecer')">
+                <img src="f7.jpeg" alt="f7.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/38BDF8?text=f7.jpeg'">
+                <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f7.jpeg</div>
+              </div>
+              <div class="p-4">
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Gran Recuerdo</span>
+                <h3 class="text-sm font-bold text-white mt-1">Cierre de Gira al Atardecer</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PARTE INFERIOR: VIDEOS v2.mp4 HASTA v8.mp4 -->
+    <section id="videoteca" class="scroll-mt-28">
+      <div class="rounded-3xl bg-[#0D0F1B] border border-slate-800/90 p-6 sm:p-10 shadow-2xl">
+        <div class="flex items-center gap-2.5 mb-6 pb-6 border-b border-slate-800/80">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400">
+            <i data-lucide="video" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Videoteca de la Gira (v2.mp4 a v8.mp4)</h2>
+            <p class="text-sm text-slate-400">Los 7 videos secundarios que registran cada una de las paradas.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- v2.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v2.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v2.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Activaciones</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 02: Invasión de Calle y Skaters</h3>
+            </div>
+          </div>
+
+          <!-- v3.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v3.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v3.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Shows & Conciertos</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 03: Festival de Ritmos Urbanos</h3>
+            </div>
+          </div>
+
+          <!-- v4.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v4.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v4.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Retos Tiburón</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 04: Desafío Tiburón Boom</h3>
+            </div>
+          </div>
+
+          <!-- v5.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v5.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v5.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Activaciones</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 05: Atardecer Electrizante</h3>
+            </div>
+          </div>
+
+          <!-- v6.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v6.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v6.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Shows & Conciertos</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 06: Noche Glow & DJ Set</h3>
+            </div>
+          </div>
+
+          <!-- v7.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col">
+            <div class="relative aspect-video bg-black">
+              <video src="v7.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v7.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Retos Tiburón</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 07: Batalla de Baile Callejero</h3>
+            </div>
+          </div>
+
+          <!-- v8.mp4 -->
+          <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 shadow-lg flex flex-col md:col-span-2 lg:col-span-1">
+            <div class="relative aspect-video bg-black">
+              <video src="v8.mp4" class="w-full h-full object-cover" controls playsinline></video>
+              <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v8.mp4</div>
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-semibold text-cyan-400">Gran Cierre</span>
+              <h3 class="text-sm font-bold text-white mt-1">Parada 08: El Cierre Explosivo</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- IDENTIDAD: TIBURÓN BOOM Y SABORES -->
+    <section class="rounded-3xl bg-gradient-to-r from-[#0E101D] via-[#121426] to-[#18112e] border border-slate-800 p-8 sm:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/40 text-purple-300 text-xs font-semibold">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-purple-400"></i>
+            Mascota Oficial de Boom Drinks
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+            Tiburón Boom: <span class="text-cyan-400">El Depredador de la Sed</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Ágil, imparable y cargado de sabor. El Tiburón Boom acompañó cada kilómetro de la gira publicitaria desatando la locura.
+          </p>
+          <div class="p-4 rounded-xl bg-black/40 border border-slate-700/80">
+            <span class="text-xs text-slate-400 block font-medium">Eslogan Oficial:</span>
+            <span class="text-sm font-extrabold text-cyan-300">"¡Un Boom de sabor en cada sorbo!"</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-cyan-500/40 shadow-lg">
+            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">El Favorito</span>
+            <h3 class="text-base font-extrabold text-white mb-1">Electric Blue Shark</h3>
+            <p class="text-xs text-slate-300">Frambuesa azul glacial y lima ácida con cafeína natural.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-purple-500/40 shadow-lg">
+            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Energía Pura</span>
+            <h3 class="text-base font-extrabold text-white mb-1">Purple Voltage</h3>
+            <p class="text-xs text-slate-300">Moras silvestres y uva negra electrizante.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-slate-600/40 shadow-lg">
+            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Zero Azúcar</span>
+            <h3 class="text-base font-extrabold text-white mb-1">Dark Shark Zero</h3>
+            <p class="text-xs text-slate-300">Frutos del bosque oscuros y guaraná amazónico.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/40 shadow-lg">
+            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Frescura Polar</span>
+            <h3 class="text-base font-extrabold text-white mb-1">Arctic White Citrus</h3>
+            <p class="text-xs text-slate-300">Toronja escarchada y menta silvestre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL PARA VER FOTOS EN GRANDE -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden flex-col justify-between p-6">
+    <div class="flex items-center justify-between text-white max-w-7xl w-full mx-auto">
+      <span id="lightboxCaption" class="text-sm font-bold text-cyan-300"></span>
+      <button onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="my-auto flex items-center justify-center">
+      <img id="lightboxImg" src="" alt="preview" class="max-w-5xl max-h-[75vh] object-contain rounded-xl shadow-2xl">
+    </div>
+    <p class="text-center text-xs text-slate-500">Haz clic en la X para cerrar</p>
+  </div>
+
+  <footer class="border-t border-slate-800/80 bg-[#06070B] py-8 text-center text-xs text-slate-500">
+    BOOM DRINKS · Gira Publicitaria 2026 · ¡Un Boom de sabor en cada sorbo!
+  </footer>
+
+  <!-- JavaScript que controla la interactividad -->
+  <script>
+    lucide.createIcons();
+
+    let albumVisible = true;
+    function toggleAlbum() {
+      const container = document.getElementById('albumContainer');
+      const text = document.getElementById('toggleText');
+      const btn = document.getElementById('toggleAlbumBtn');
+      const icon = document.getElementById('toggleIcon');
+      
+      albumVisible = !albumVisible;
+      if (albumVisible) {
+        container.classList.remove('hidden');
+        text.innerText = 'Ocultar Álbum de Fotos';
+        btn.className = 'inline-flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-purple-600 to-indigo-600 text-white border border-purple-400/30 shadow-lg cursor-pointer hover:opacity-90 transition-all';
+        icon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        container.classList.add('hidden');
+        text.innerText = 'Mostrar Álbum de Fotos (7 Fotos)';
+        btn.className = 'inline-flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 text-black border border-cyan-400/40 shadow-lg cursor-pointer hover:opacity-90 transition-all';
+        icon.setAttribute('data-lucide', 'eye');
+      }
+      lucide.createIcons();
+    }
+
+    function openLightbox(src, title) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = src;
+      cap.innerText = title + ' (' + src + ')';
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
 </body>
 </html>
