@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boom Drinks - Gira Publicitaria</title>
-  <!-- Tailwind CSS para el diseño -->
+  <title>Boom Drinks - Gira en Salones de Clases</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fuentes oficiales -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
@@ -65,7 +65,8 @@
       <div class="flex items-center gap-3">
         <a href="#video-principal" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Video Apertura</a>
         <a href="#album-fotos" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Álbum Fotos</a>
-        <a href="#videoteca" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Videoteca</a>
+        <a href="#videoteca" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Gira en Salones</a>
+        <a href="#productos" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors hidden md:block">Productos</a>
       </div>
     </div>
   </header>
@@ -77,7 +78,7 @@
     <section class="text-center max-w-4xl mx-auto pt-4">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-widest mb-6">
         <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400"></i>
-        <span>Gira Publicitaria Oficial 2026</span>
+        <span>Gira Institucional // Salones de Clases</span>
       </div>
 
       <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-4 leading-none">
@@ -94,7 +95,7 @@
       </div>
 
       <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mt-4 font-normal">
-        Revive los mejores momentos de la gira con <strong class="text-cyan-400 font-semibold">Tiburón Boom</strong>, degustaciones masivas y toda la energía.
+        Revive la gira de <strong class="text-cyan-400 font-semibold">los dos tiburones Boom</strong> conviviendo con los alumnos y clientes en los salones de clases de la institución, compartiendo la bebida <strong class="text-cyan-300">Blue Shark</strong> y la bandeja de frutas <strong class="text-purple-300">La Tóxica</strong>.
       </p>
     </section>
 
@@ -108,12 +109,12 @@
                 <i data-lucide="video" class="w-5 h-5"></i>
               </div>
               <div>
-                <span class="text-sm font-bold text-white block">Video Oficial de Apertura</span>
-                <span class="text-xs text-slate-400">Archivo: <code class="text-cyan-300 font-mono">v1si.mp4</code></span>
+                <span class="text-sm font-bold text-white block">Apertura: Inicio de la Gira en los Salones</span>
+                <span class="text-xs text-slate-400">Archivo: <code class="text-cyan-300 font-mono">v1si.mp4</code> · Recorrido Institucional</span>
               </div>
             </div>
             <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-purple-900/30 text-purple-300 border border-purple-500/30">
-              Video Destacado
+              Video de Apertura
             </span>
           </div>
 
@@ -134,9 +135,9 @@
               <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
                 <i data-lucide="image" class="w-4 h-4"></i>
               </div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Álbum de Fotos de la Gira</h2>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Álbum de Convivencia con los Alumnos</h2>
             </div>
-            <p class="text-sm text-slate-400">Fotografías oficiales desde <code class="text-cyan-300 font-mono">f1.jpeg</code> hasta <code class="text-cyan-300 font-mono">f7.jpeg</code>.</p>
+            <p class="text-sm text-slate-400">Los dos tiburones conviviendo con los alumnos y clientes (<code class="text-cyan-300 font-mono">f1.jpeg</code> a <code class="text-cyan-300 font-mono">f7.jpeg</code>).</p>
           </div>
 
           <!-- BOTÓN SOLICITADO: OCULTA Y MUESTRA EL ÁLBUM AL PRESIONARLO -->
@@ -152,85 +153,85 @@
             
             <!-- Foto 1 (f1.jpeg) -->
             <div class="sm:col-span-2 lg:col-span-2 rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f1.jpeg', 'Llegada del Boom Truck')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f1.jpeg', 'Llegada y bienvenida con los alumnos')">
                 <img src="f1.jpeg" alt="f1.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00A3FF?text=f1.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f1.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Caravana Oficial</span>
-                <h3 class="text-sm font-bold text-white mt-1">Llegada del Boom Truck</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Convivencia Escolar</span>
+                <h3 class="text-sm font-bold text-white mt-1">Llegada y bienvenida con los alumnos</h3>
               </div>
             </div>
 
             <!-- Foto 2 (f2.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f2.jpeg', 'Tiburón Boom en Tarima')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f2.jpeg', 'Los dos tiburones conviviendo con los estudiantes')">
                 <img src="f2.jpeg" alt="f2.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/A855F7?text=f2.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f2.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Mascota Oficial</span>
-                <h3 class="text-sm font-bold text-white mt-1">Tiburón Boom en Tarima</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Momentos Especiales</span>
+                <h3 class="text-sm font-bold text-white mt-1">Los dos tiburones conviviendo con los estudiantes</h3>
               </div>
             </div>
 
             <!-- Foto 3 (f3.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f3.jpeg', 'Zona de Degustación')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f3.jpeg', 'Degustación y atención a los clientes')">
                 <img src="f3.jpeg" alt="f3.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00D2FF?text=f3.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f3.jpeg</div>
               </div>
               <div class="p-4">
                 <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Degustación</span>
-                <h3 class="text-sm font-bold text-white mt-1">Zona de Degustación</h3>
+                <h3 class="text-sm font-bold text-white mt-1">Degustación y atención a los clientes</h3>
               </div>
             </div>
 
             <!-- Foto 4 (f4.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f4.jpeg', 'Retos con el Público')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f4.jpeg', 'Dinámicas y risas en el salón')">
                 <img src="f4.jpeg" alt="f4.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/8B5CF6?text=f4.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f4.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Dinámicas</span>
-                <h3 class="text-sm font-bold text-white mt-1">Retos con el Público</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Visita en el Aula</span>
+                <h3 class="text-sm font-bold text-white mt-1">Dinámicas y risas en el salón</h3>
               </div>
             </div>
 
             <!-- Foto 5 (f5.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f5.jpeg', 'Show de Luces y Neón')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f5.jpeg', 'Fotos del recuerdo con los alumnos')">
                 <img src="f5.jpeg" alt="f5.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/00A3FF?text=f5.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f5.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Show Visual</span>
-                <h3 class="text-sm font-bold text-white mt-1">Show de Luces y Neón</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Comunidad Escolar</span>
+                <h3 class="text-sm font-bold text-white mt-1">Fotos del recuerdo con los alumnos</h3>
               </div>
             </div>
 
             <!-- Foto 6 (f6.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f6.jpeg', 'Entrega de Merch Boom')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f6.jpeg', 'Entrega de productos y sonrisas')">
                 <img src="f6.jpeg" alt="f6.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/C084FC?text=f6.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f6.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Merchandise</span>
-                <h3 class="text-sm font-bold text-white mt-1">Entrega de Merch Boom</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Clientes y Alumnos</span>
+                <h3 class="text-sm font-bold text-white mt-1">Entrega de productos y sonrisas</h3>
               </div>
             </div>
 
             <!-- Foto 7 (f7.jpeg) -->
             <div class="rounded-2xl overflow-hidden bg-[#111422] border border-slate-800 hover:border-cyan-500/50 transition-all shadow-lg flex flex-col">
-              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f7.jpeg', 'Cierre de Gira al Atardecer')">
+              <div class="relative aspect-[4/3] bg-black cursor-pointer overflow-hidden group" onclick="openLightbox('f7.jpeg', 'Gran foto grupal con los alumnos')">
                 <img src="f7.jpeg" alt="f7.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0c0e18/38BDF8?text=f7.jpeg'">
                 <div class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded font-mono text-xs font-bold text-cyan-300 border border-slate-700">f7.jpeg</div>
               </div>
               <div class="p-4">
-                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Gran Recuerdo</span>
-                <h3 class="text-sm font-bold text-white mt-1">Cierre de Gira al Atardecer</h3>
+                <span class="text-[11px] font-semibold text-purple-400 uppercase tracking-wider block">Recuerdo Inolvidable</span>
+                <h3 class="text-sm font-bold text-white mt-1">Gran foto grupal con los alumnos</h3>
               </div>
             </div>
 
@@ -239,7 +240,7 @@
       </div>
     </section>
 
-    <!-- 3. PARTE INFERIOR: VIDEOS v2.mp4 HASTA v8.mp4 -->
+    <!-- 3. PARTE INFERIOR: VIDEOS v2.mp4 HASTA v8.mp4 (GIRA POR LOS SALONES DE CLASES) -->
     <section id="videoteca" class="scroll-mt-28">
       <div class="rounded-3xl bg-[#0D0F1B] border border-slate-800/90 p-6 sm:p-10 shadow-2xl">
         <div class="flex items-center gap-2.5 mb-6 pb-6 border-b border-slate-800/80">
@@ -247,8 +248,8 @@
             <i data-lucide="video" class="w-4 h-4"></i>
           </div>
           <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Videoteca de la Gira (v2.mp4 a v8.mp4)</h2>
-            <p class="text-sm text-slate-400">Los 7 videos secundarios que registran cada una de las paradas.</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Gira por los Salones de Clases (v2.mp4 a v8.mp4)</h2>
+            <p class="text-sm text-slate-400">Los 7 videos secundarios que registran la visita de los dos tiburones a cada salón.</p>
           </div>
         </div>
 
@@ -261,8 +262,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v2.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Activaciones</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 02: Invasión de Calle y Skaters</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 01</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 01</h3>
+              <p class="text-xs text-slate-400 mt-1">Visita de los dos tiburones y entrega en el primer salón.</p>
             </div>
           </div>
 
@@ -273,8 +275,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v3.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Shows & Conciertos</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 03: Festival de Ritmos Urbanos</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 02</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 02</h3>
+              <p class="text-xs text-slate-400 mt-1">Llegada sorpresa y convivencia con los alumnos.</p>
             </div>
           </div>
 
@@ -285,8 +288,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v4.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Retos Tiburón</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 04: Desafío Tiburón Boom</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 03</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 03</h3>
+              <p class="text-xs text-slate-400 mt-1">Dinámicas y degustación de Blue Shark y La Tóxica.</p>
             </div>
           </div>
 
@@ -297,8 +301,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v5.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Activaciones</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 05: Atardecer Electrizante</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 04</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 04</h3>
+              <p class="text-xs text-slate-400 mt-1">Ambiente alegre con los dos tiburones en el aula.</p>
             </div>
           </div>
 
@@ -309,8 +314,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v6.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Shows & Conciertos</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 06: Noche Glow & DJ Set</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 05</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 05</h3>
+              <p class="text-xs text-slate-400 mt-1">Recorrido por las bancas y fotos con los estudiantes.</p>
             </div>
           </div>
 
@@ -321,8 +327,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v7.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Retos Tiburón</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 07: Batalla de Baile Callejero</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 06</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 06</h3>
+              <p class="text-xs text-slate-400 mt-1">Convivencia de los alumnos con los dos tiburones.</p>
             </div>
           </div>
 
@@ -333,8 +340,9 @@
               <div class="absolute top-3 left-3 bg-black/80 px-2 py-0.5 rounded text-[11px] font-mono font-bold text-purple-300 border border-purple-500/40">v8.mp4</div>
             </div>
             <div class="p-4">
-              <span class="text-xs font-semibold text-cyan-400">Gran Cierre</span>
-              <h3 class="text-sm font-bold text-white mt-1">Parada 08: El Cierre Explosivo</h3>
+              <span class="text-xs font-semibold text-cyan-400">Salón 07</span>
+              <h3 class="text-sm font-bold text-white mt-1">Gira en Salón de Clases 07 // Cierre</h3>
+              <p class="text-xs text-slate-400 mt-1">El gran cierre de la gira institucional por salones.</p>
             </div>
           </div>
 
@@ -342,19 +350,19 @@
       </div>
     </section>
 
-    <!-- IDENTIDAD: TIBURÓN BOOM Y SABORES -->
-    <section class="rounded-3xl bg-gradient-to-r from-[#0E101D] via-[#121426] to-[#18112e] border border-slate-800 p-8 sm:p-12 shadow-2xl">
+    <!-- ÚNICAMENTE LOS DOS PRODUCTOS OFICIALES: BLUE SHARK Y LA TÓXICA -->
+    <section id="productos" class="rounded-3xl bg-gradient-to-r from-[#0E101D] via-[#121426] to-[#18112e] border border-slate-800 p-8 sm:p-12 shadow-2xl">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-5 space-y-4">
           <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/40 text-purple-300 text-xs font-semibold">
             <i data-lucide="flame" class="w-3.5 h-3.5 text-purple-400"></i>
-            Mascota Oficial de Boom Drinks
+            Mascotas Oficiales: Los Dos Tiburones
           </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-            Tiburón Boom: <span class="text-cyan-400">El Depredador de la Sed</span>
+            Los Dos Tiburones Boom <span class="text-cyan-400">en los Salones</span>
           </h2>
           <p class="text-sm text-slate-300 leading-relaxed">
-            Ágil, imparable y cargado de sabor. El Tiburón Boom acompañó cada kilómetro de la gira publicitaria desatando la locura.
+            Nuestros dos tiburones oficiales visitaron los salones de clases de la institución conviviendo de cerca con todos los alumnos y clientes, repartiendo alegría y el sabor de Boom Drinks.
           </p>
           <div class="p-4 rounded-xl bg-black/40 border border-slate-700/80">
             <span class="text-xs text-slate-400 block font-medium">Eslogan Oficial:</span>
@@ -362,26 +370,42 @@
           </div>
         </div>
 
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl bg-black/40 border border-cyan-500/40 shadow-lg">
-            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">El Favorito</span>
-            <h3 class="text-base font-extrabold text-white mb-1">Electric Blue Shark</h3>
-            <p class="text-xs text-slate-300">Frambuesa azul glacial y lima ácida con cafeína natural.</p>
+        <!-- Las 2 tarjetas exactas: Blue Shark y La Tóxica -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- 1. Blue Shark -->
+          <div class="p-6 rounded-2xl bg-black/50 border border-cyan-500/40 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[11px] font-semibold uppercase text-cyan-300">Bebida Estrella</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-cyan-950 text-cyan-200 border border-cyan-500/30">Mora Azul</span>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-2 font-display">Blue Shark</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Nuestra bebida refrescante de mora azul que conquistó a todos los estudiantes y clientes durante la gira en los salones de clases.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-semibold text-cyan-400 flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span>Producto Oficial de la Gira</span>
+            </div>
           </div>
-          <div class="p-5 rounded-2xl bg-black/40 border border-purple-500/40 shadow-lg">
-            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Energía Pura</span>
-            <h3 class="text-base font-extrabold text-white mb-1">Purple Voltage</h3>
-            <p class="text-xs text-slate-300">Moras silvestres y uva negra electrizante.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-black/40 border border-slate-600/40 shadow-lg">
-            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Zero Azúcar</span>
-            <h3 class="text-base font-extrabold text-white mb-1">Dark Shark Zero</h3>
-            <p class="text-xs text-slate-300">Frutos del bosque oscuros y guaraná amazónico.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-black/40 border border-white/40 shadow-lg">
-            <span class="text-[11px] font-semibold uppercase text-cyan-300 block mb-1">Frescura Polar</span>
-            <h3 class="text-base font-extrabold text-white mb-1">Arctic White Citrus</h3>
-            <p class="text-xs text-slate-300">Toronja escarchada y menta silvestre.</p>
+
+          <!-- 2. La Tóxica -->
+          <div class="p-6 rounded-2xl bg-black/50 border border-purple-500/40 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[11px] font-semibold uppercase text-purple-300">Bandeja Especial</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-purple-950 text-purple-200 border border-purple-500/30">Bandeja de Frutas</span>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-2 font-display">La Tóxica</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Nuestra deliciosa bandeja de frutas preparadas con los toques característicos para consentir y compartir con todos los alumnos.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-semibold text-purple-400 flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span>Producto Oficial de la Gira</span>
+            </div>
           </div>
         </div>
       </div>
@@ -404,7 +428,7 @@
   </div>
 
   <footer class="border-t border-slate-800/80 bg-[#06070B] py-8 text-center text-xs text-slate-500">
-    BOOM DRINKS · Gira Publicitaria 2026 · ¡Un Boom de sabor en cada sorbo!
+    BOOM DRINKS · Gira en Salones de Clases · ¡Un Boom de sabor en cada sorbo!
   </footer>
 
   <!-- JavaScript que controla la interactividad -->
